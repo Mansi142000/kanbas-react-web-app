@@ -28,4 +28,3 @@ export default function Courses() {
     </div>
   );
 }
-// Comment
