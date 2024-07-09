@@ -112,8 +112,8 @@ export default function AssignmentEditor() {
             <td colSpan={2}>
             <hr/>
               <div className="btn-container">
-                <button type="button" onClick={() => window.location.href = '/Kanbas/Courses/Assignments/screen.html'}>Cancel</button>
-                <button type="button" onClick={() => window.location.href = '/Kanbas/Courses/Assignments/screen.html'}>Save</button>
+                <button type="button">Cancel</button>
+                <button type="button">Save</button>
               </div>
             </td>
           </tr>
