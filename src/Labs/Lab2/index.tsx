@@ -2,7 +2,7 @@ import "./index.css";
 
 export default function Lab2() {
   return (
-    <div id="wd-lab2">
+    <div className="container">
       <h2>Lab 2 - Cascading Style Sheets</h2>
       <h3>Styling with the STYLE attribute</h3>
       <p style={{ backgroundColor: "blue", color: "white" }}>
@@ -30,6 +30,307 @@ export default function Lab2() {
           This heading has the same style as the paragraph above.
         </h4>
       </div>
+      <div id="wd-css-document-structure">
+        <div className="wd-selector-1">
+          <h3>Document structure selectors</h3>
+          <div className="wd-selector-2">
+            Selectors can be combined to refer elements in particular
+            places in the document
+            <p className="wd-selector-3">
+              This paragraph's red background is referenced as
+              <br />
+              .selector-2 .selector3<br />
+              meaning the descendant of some ancestor.<br />
+              <span className="wd-selector-4">
+                Whereas this span is a direct child of its parent
+              </span><br />
+                You can combine these relationships to create specific 
+                styles depending on the document structure
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="wd-css-colors">
+        <h2>Colors</h2>
+        <h3 className="wd-fg-color-blue">Foreground color</h3>
+        <p className="wd-fg-color-red">
+          The text in this paragraph is red but
+          <span className="wd-fg-color-green">this text is green</span>
+        </p>
+      </div>
+      <div id="wd-css-background-colors">
+        <h3 className="wd-bg-color-blue wd-fg-color-white">Background color</h3>
+        <p className="wd-bg-color-red wd-fg-color-black">
+          This background of this paragraph is red but
+          <span className="wd-bg-color-green wd-fg-color-white">
+            the background of this text is green and the foreground white
+          </span>
+        </p>
+      </div>
+      <div id="wd-css-borders">
+        <h2>Borders</h2>
+        <p className="wd-border-fat wd-border-red wd-border-solid">
+          Solid fat red border</p>
+        <p className="wd-border-thin wd-border-blue wd-border-dashed">
+          Dashed thin blue border</p>
+      </div>
+      <div id="wd-css-paddings">
+        <h2>Padding</h2>
+        <div className="wd-padded-top-left wd-border-fat 
+            wd-border-red wd-border-solid 
+            wd-bg-color-yellow">
+          Padded top left
+        </div>
+        <div className="wd-padded-bottom-right wd-border-fat 
+            wd-border-blue wd-border-solid 
+            wd-bg-color-yellow">
+          Padded bottom right
+        </div>
+        <div className="wd-padding-fat wd-border-fat 
+            wd-border-yellow wd-border-solid 
+            wd-bg-color-blue wd-fg-color-white">
+          Padded all around
+        </div>
+      </div>
+      <div id="wd-css-margins">
+        <h2>Margins</h2>
+        <div
+          className="wd-margin-bottom 
+            wd-padded-top-left 
+            wd-border-fat wd-border-red 
+            wd-border-solid 
+            wd-bg-color-yellow">
+          Margin bottom
+        </div>
+        <div
+          className="wd-margin-right-left 
+            wd-padded-bottom-right 
+            wd-border-fat wd-border-blue 
+            wd-border-solid 
+            wd-bg-color-yellow">
+          Margin left right
+        </div>
+        <div
+          className="wd-margin-all-around 
+            wd-padding-fat wd-border-fat 
+            wd-border-yellow 
+            wd-border-solid 
+            wd-bg-color-blue 
+            wd-fg-color-white">
+          Margin all around
+        </div>
+      </div>
+      <div id="wd-css-borders">
+        <h3>Rounded corners</h3>
+        <p className="wd-rounded-corners-top wd-border-thin 
+           wd-border-blue wd-border-solid wd-padding-fat">
+          Rounded corners on the top
+        </p>
+        <p className="wd-rounded-corners-bottom 
+           wd-border-thin wd-border-blue wd-border-solid 
+           wd-padding-fat">
+          Rounded corners at the bottom
+        </p>
+        <p className="wd-rounded-corners-all-around 
+           wd-border-thin wd-border-blue wd-border-solid 
+           wd-padding-fat">
+          Rounded corners all around
+        </p>
+        <p className="wd-rounded-corners-inline 
+           wd-border-thin wd-border-blue wd-border-solid 
+           wd-padding-fat">
+          Different rounded corners
+        </p>
+      </div>
+      <div id="wd-css-dimensions">
+        <h2>Dimension</h2>
+        <div>
+          <div className="wd-dimension-portrait wd-bg-color-yellow">
+            Portrait
+          </div>
+          <div className="wd-dimension-landscape wd-bg-color-blue
+                      wd-fg-color-white">
+            Landscape
+          </div>
+          <div className="wd-dimension-square wd-bg-color-red">
+            Square</div>
+        </div>
+      </div>
+      <div id="wd-css-position-relative">
+        <h2>Relative</h2>
+        <div className="wd-bg-color-gray">
+          <div className="wd-bg-color-yellow 
+                      wd-dimension-portrait">
+            <div className="wd-pos-relative-nudge-down-right">
+              Portrait</div></div>
+          <div className="wd-pos-relative-nudge-up-right 
+              wd-bg-color-blue wd-fg-color-white 
+              wd-dimension-landscape">
+            Landscape</div>
+          <div className="wd-bg-color-red wd-dimension-square">
+            Square</div>
+        </div>
+      </div>
+      <div id="wd-css-position-absolute">
+        <h2>Absolute position</h2>
+        <div className="wd-pos-relative">
+          <div className="wd-pos-absolute-10-10 
+               wd-bg-color-yellow wd-dimension-portrait">
+            Portrait</div>
+          <div className="wd-pos-absolute-50-50 
+               wd-bg-color-blue wd-fg-color-white 
+               wd-dimension-landscape">
+            Landscape</div>
+          <div className="wd-pos-absolute-120-20 
+               wd-bg-color-red wd-dimension-square">
+            Square</div>
+        </div><br /><br /><br /><br /><br /><br /><br />
+      </div>
+      <div id="wd-css-position-fixed">
+        <h2>Fixed position</h2>
+        Checkout the blue square that says "Fixed position" stuck all the way on the right and half way down the page. It doesn't scroll with the rest of the page. Its position is "Fixed".
+        <div className="wd-pos-fixed 
+          wd-dimension-square wd-bg-color-blue 
+          wd-fg-color-white">
+          Fixed position
+        </div>
+      </div>
+      <div id="wd-z-index">
+        <h2>Z index</h2>
+        <div className="wd-pos-relative">
+          <div className="wd-pos-absolute-10-10 
+               wd-bg-color-yellow wd-dimension-portrait">
+            Portrait
+          </div>
+          <div className="wd-zindex-bring-to-front 
+               wd-pos-absolute-50-50 wd-dimension-landscape
+               wd-bg-color-blue wd-fg-color-white">
+            Landscape
+          </div>
+          <div className="wd-pos-absolute-120-20 
+               wd-bg-color-red wd-dimension-square">
+            Square
+          </div>
+        </div><br /><br /><br /><br /><br /><br /><br />
+      </div>
+      <div id="wd-float-divs">
+       <h2>Float</h2>
+       <div>
+         <div className="wd-float-left wd-dimension-portrait wd-bg-color-yellow">
+           Yellow </div>
+         <div className="wd-float-left wd-dimension-portrait wd-bg-color-blue wd-fg-color-white">
+           Blue </div>
+         <div className="wd-float-left wd-dimension-portrait wd-bg-color-red">
+           Red </div>
+         <img className="wd-float-right"
+           src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap.jpg" width="400px" />
+       </div>
+     </div>
+     <div id="wd-clear-floats">
+       <h2>Clear floats</h2>
+       <div className="wd-float-left wd-dimension-portrait wd-bg-color-yellow">
+         Yellow</div>
+       <div className="wd-float-left wd-dimension-portrait wd-bg-color-blue wd-fg-color-white">
+         Blue</div>
+       <div className="wd-float-left wd-dimension-portrait wd-bg-color-red">
+         Red</div>
+       <div className="wd-clear-float"></div>
+       <p>Paragraph with floats cleared</p>
+       <div className="wd-float-left wd-dimension-portrait wd-bg-color-yellow">
+         Yellow</div>
+       <div className="wd-float-left wd-dimension-portrait wd-bg-color-blue wd-fg-color-white">
+         Blue</div>
+       <div className="wd-float-left wd-dimension-portrait wd-bg-color-red">
+         Red</div>
+     </div>
+     <div id="wd-flex-box">
+       <h2>Flexbox</h2>
+       <div id="wd-css-flex">
+         <div className="wd-flex-container">
+           <div className="wd-flex-item wd-flex-item-1 wd-bg-color-red">1</div>
+           <div className="wd-flex-item wd-flex-item-2 wd-bg-color-yellow">2</div>
+           <div className="wd-flex-item wd-flex-item-3 wd-bg-color-green">3</div>
+         </div>
+         <div className="wd-flex-container">
+           <div className="wd-flex-item wd-flex-item-1 wd-bg-color-blue">1</div>
+           <div className="wd-flex-item wd-flex-item-2 wd-bg-color-black wd-fg-color-white">2</div>
+           <div className="wd-flex-item wd-flex-item-3 wd-bg-color-gray">3</div>
+         </div>
+       </div>
+     </div>
+     <div id="wd-css-grid">
+       <h2>CSS Grid</h2>
+       <div className="wd-grid-container">
+         <div className="wd-grid-item wd-bg-color-red">1</div>
+         <div className="wd-grid-item wd-bg-color-yellow">2</div>
+         <div className="wd-grid-item wd-bg-color-green">3</div>
+         <div className="wd-grid-item wd-bg-color-blue">4</div>
+         <div className="wd-grid-item wd-bg-color-black wd-fg-color-white">5</div>
+         <div className="wd-grid-item wd-bg-color-gray">6</div>
+       </div>
+     </div>
+     <div id="wd-css-bootstrap">
+       <h2>Bootstrap</h2>
+       <div className="container">
+         <div className="row">
+           <div className="col">
+             <div className="wd-bg-color-red wd-fg-color-white">1</div>
+           </div>
+           <div className="col">
+             <div className="wd-bg-color-yellow">2</div>
+           </div>
+           <div className="col">
+             <div className="wd-bg-color-green">3</div>
+           </div>
+           <div className="col">
+             <div className="wd-bg-color-blue wd-fg-color-white">4</div>
+           </div>
+           <div className="col">
+             <div className="wd-bg-color-black wd-fg-color-white">5</div>
+           </div>
+           <div className="col">
+             <div className="wd-bg-color-gray">6</div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div id="wd-css-responsive">
+       <h2>Responsive</h2>
+       <div className="wd-responsive wd-bg-color-blue wd-fg-color-white">
+         Resize the window to see changes in width
+       </div>
+     </div>
+     <div id="wd-css-responsive-bootstrap">
+       <h2>Responsive Bootstrap</h2>
+       <div className="container">
+         <div className="row">
+           <div className="col-md-1 wd-bg-color-red">1</div>
+           <div className="col-md-2 wd-bg-color-yellow">2</div>
+           <div className="col-md-3 wd-bg-color-green">3</div>
+           <div className="col-md-4 wd-bg-color-blue wd-fg-color-white">4</div>
+           <div className="col-md-5 wd-bg-color-black wd-fg-color-white">5</div>
+           <div className="col-md-6 wd-bg-color-gray">6</div>
+         </div>
+       </div>
+     </div>
+     <div id="wd-css-forms">
+       <h2>Forms</h2>
+       <form className="form">
+         <div className="form-group">
+           <label htmlFor="username">Username</label>
+           <input type="text" id="username" className="form-control" placeholder="alice" />
+         </div>
+         <div className="form-group">
+           <label htmlFor="password">Password</label>
+           <input type="password" id="password" className="form-control" placeholder="123qwe#$%" />
+         </div>
+         <div className="form-check">
+           <input type="checkbox" id="rememberMe" className="form-check-input" />
+           <label htmlFor="rememberMe" className="form-check-label">Remember me</label>
+         </div>
+         <button type="submit" className="btn btn-primary">Submit</button>
+       </form>
+     </div>
     </div>
   );
 }
