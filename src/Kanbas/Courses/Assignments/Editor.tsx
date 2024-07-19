@@ -61,12 +61,12 @@ export default function AssignmentEditor() {
 
         <div className="form-group">
           <div className="row">
-            <div className="col-6 d-flex justify-content-end align-items-center">
+            <div className="col-3 d-flex justify-content-end align-items-center">
               <label htmlFor="displayGrade">
                 <b>Display Grade As</b>
               </label>
             </div>
-            <div className="col col-6 mb-3">
+            <div className="col col-9 mb-3">
               <select className="form-control" id="displayGrade">
                 <option value="">Select Format</option>
                 <option value="percentage">Percentage</option>
