@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom'; 
 import { FaFileImport } from "react-icons/fa";
 import { LiaFileImportSolid } from "react-icons/lia";
 import { IoMdSettings } from "react-icons/io";
@@ -6,6 +7,7 @@ import { CiFilter } from "react-icons/ci";
 
 import usersData from '../../Database/users.json';
 import gradesData from '../../Database/grades.json';
+import enrollmentsData from '../../Database/enrollments.json';
 
 interface User {
   _id: string;
@@ -20,17 +22,31 @@ interface Grade {
   grade: string;
 }
 
+interface Enrollment {
+  _id: string;
+  user: string;
+  course: string;
+}
+
 export default function Grades() {
+  const { cid } = useParams<{ cid: string }>();
   const [students, setStudents] = useState<User[]>([]);
   const [grades, setGrades] = useState<Grade[]>([]);
+  const [enrollments, setEnrollments] = useState<Enrollment[]>([]);
   const [assignmentNames, setAssignmentNames] = useState<string[]>([]);
 
   useEffect(() => {
     setStudents(usersData as User[]);
     setGrades(gradesData as Grade[]);
+    setEnrollments(enrollmentsData as Enrollment[]);
     const uniqueAssignments = Array.from(new Set(gradesData.map(grade => grade.assignment)));
     setAssignmentNames(uniqueAssignments);
   }, []);
+
+  const getEnrolledStudents = () => {
+    const enrolledStudentIds = new Set(enrollments.filter(enrollment => enrollment.course === cid).map(enrollment => enrollment.user));
+    return students.filter(student => enrolledStudentIds.has(student._id));
+  };
 
   const getStudentGrades = (studentId: string) => {
     const studentGrades = grades.filter(grade => grade.student === studentId);
@@ -113,9 +129,9 @@ export default function Grades() {
               </tr>
             </thead>
             <tbody>
-              {students.map(student => (
+              {getEnrolledStudents().map(student => (
                 <tr key={student._id}>
-                  <th scope="row" className="text-danger">{`${student.firstName} ${student.lastName}`}</th>
+                  <th scope="row">{`${student.firstName} ${student.lastName}`}</th>
                   {getStudentGrades(student._id)}
                 </tr>
               ))}
