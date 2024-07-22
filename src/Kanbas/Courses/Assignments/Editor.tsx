@@ -1,7 +1,13 @@
 import { FaPlus } from "react-icons/fa6";
 import { FaRegCalendarAlt } from "react-icons/fa";
-
+import { assignments } from "../../Database";
+import { useParams } from "react-router";
 export default function AssignmentEditor() {
+  const { aid,cid} = useParams();
+  const assignment = assignments.find(
+    (assignment) => assignment.course === cid && assignment._id === aid
+  );
+  console.log(assignment);
   return (
     <div className="container p-4">
       <form>
@@ -13,14 +19,14 @@ export default function AssignmentEditor() {
             type="text"
             className="form-control"
             id="name"
-            placeholder="A1 - ENV + HTML"
+            value={assignment?.title}
           />
         </div>
         <div className="form-group">
           <textarea
             className="form-control w-100 mb-3"
             style={{ height: "200px" }}
-            placeholder="The assignment is available online. Submit a link to the landing page of your Web application running on Netlify. The landing page should include your full name and section, links to each of the lab assignments, a link to the Kanbas application, and links to all relevant source code repositories. The Kanbas application should include a link to navigate back to the landing page."
+            value={assignment?.description}
           />
         </div>
         <div className="form-group">
@@ -35,8 +41,8 @@ export default function AssignmentEditor() {
                 type="number"
                 className="form-control"
                 id="points"
-                placeholder="Enter total points"
-              />
+                value={assignment?.points}
+                />
             </div>
           </div>
         </div>
@@ -166,7 +172,6 @@ export default function AssignmentEditor() {
               type="text"
               className="form-control mb-2"
               id="name"
-              placeholder="A1 - ENV + HTML"
             />
 
             <div className="mb-2">
@@ -180,8 +185,8 @@ export default function AssignmentEditor() {
                     type="text"
                     className="form-control mb-2 border border-0"
                     id="name"
-                    placeholder="May 13, 2024, 11:59 PM"
-                  />
+                    value={assignment?.dueDate}
+                    />
                 </div>
                 <div className="col col-1 border border-1 rounded-right">
                   <FaRegCalendarAlt />
@@ -201,8 +206,8 @@ export default function AssignmentEditor() {
                       type="text"
                       className="form-control mb-2 border border-0"
                       id="name"
-                      placeholder="May 6, 2024, 11:59 PM"
-                    />
+                      value={assignment?.availableDate}
+                      />
                   </div>
                   <div className="col col-2 border border-1 rounded-right">
                     <FaRegCalendarAlt />
@@ -221,7 +226,6 @@ export default function AssignmentEditor() {
                       type="text"
                       className="form-control mb-2 border border-0"
                       id="name"
-                      placeholder="May 6, 2024, 11:59 PM"
                     />
                   </div>
                   <div className="col col-2 border border-1 rounded-right ">

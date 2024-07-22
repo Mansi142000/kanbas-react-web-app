@@ -1,11 +1,83 @@
 [
-    { "_id": "A101", "title": "Propulsion Assignment", "course": "RS101" },
-    { "_id": "A102", "title": "Combustion Analysis", "course": "RS101" },
-    { "_id": "A103", "title": "Nozzle Design Project", "course": "RS101" },
-    { "_id": "A201", "title": "Aerodynamics Quiz", "course": "RS102" },
-    { "_id": "A202", "title": "Flow Analysis", "course": "RS102" },
-    { "_id": "A203", "title": "Heating Analysis", "course": "RS102" },
-    { "_id": "A301", "title": "Structural Design Task", "course": "RS103" },
-    { "_id": "A302", "title": "Orbital Calculations", "course": "RS103" },
-    { "_id": "A303", "title": "Systems Engineering Exam", "course": "RS103" }
-  ]
+  {
+    "_id": "A101",
+    "title": "Propulsion Assignment",
+    "course": "RS101",
+    "description": "Analyzing different propulsion systems and their efficiency.",
+    "dueDate": "Aug 05 at 11:59 PM",
+    "points": 80,
+    "availableDate": "Jul 29 at 11:59 PM"
+  },
+  {
+    "_id": "A102",
+    "title": "Combustion Analysis",
+    "course": "RS101",
+    "description": "Conducting a detailed analysis of combustion processes in rocket engines.",
+    "dueDate": "Aug 10 at 11:59 PM",
+    "points": 100,
+    "availableDate": "Aug 03 at 11:59 PM"
+  },
+  {
+    "_id": "A103",
+    "title": "Nozzle Design Project",
+    "course": "RS101",
+    "description": "Designing an efficient nozzle for rocket propulsion.",
+    "dueDate": "Aug 15 at 11:59 PM",
+    "points": 120,
+    "availableDate": "Aug 08 at 11:59 PM"
+  },
+  {
+    "_id": "A201",
+    "title": "Aerodynamics Quiz",
+    "course": "RS102",
+    "description": "Quiz covering principles of aerodynamics and their application in aerospace engineering.",
+    "dueDate": "Aug 07 at 11:59 PM",
+    "points": 50,
+    "availableDate": "Jul 31 at 11:59 PM"
+  },
+  {
+    "_id": "A202",
+    "title": "Flow Analysis",
+    "course": "RS102",
+    "description": "Analyzing fluid flow patterns around aircraft wings.",
+    "dueDate": "Aug 12 at 11:59 PM",
+    "points": 70,
+    "availableDate": "Aug 05 at 11:59 PM"
+  },
+  {
+    "_id": "A203",
+    "title": "Heating Analysis",
+    "course": "RS102",
+    "description": "Studying heat transfer mechanisms in aerospace applications.",
+    "dueDate": "Aug 17 at 11:59 PM",
+    "points": 90,
+    "availableDate": "Aug 10 at 11:59 PM"
+  },
+  {
+    "_id": "A301",
+    "title": "Structural Design Task",
+    "course": "RS103",
+    "description": "Designing a structural framework for a spacecraft.",
+    "dueDate": "Aug 09 at 11:59 PM",
+    "points": 110,
+    "availableDate": "Aug 02 at 11:59 PM"
+  },
+  {
+    "_id": "A302",
+    "title": "Orbital Calculations",
+    "course": "RS103",
+    "description": "Performing calculations for orbital mechanics and trajectory planning.",
+    "dueDate": "Aug 14 at 11:59 PM",
+    "points": 130,
+    "availableDate": "Aug 07 at 11:59 PM"
+  },
+  {
+    "_id": "A303",
+    "title": "Systems Engineering Exam",
+    "course": "RS103",
+    "description": "Exam covering systems engineering principles in aerospace systems.",
+    "dueDate": "Aug 19 at 11:59 PM",
+    "points": 150,
+    "availableDate": "Aug 12 at 11:59 PM"
+  }
+]
