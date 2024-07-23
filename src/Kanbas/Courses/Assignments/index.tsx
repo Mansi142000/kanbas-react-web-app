@@ -7,7 +7,7 @@ import { Link, useParams } from "react-router-dom";
 import { assignments } from "../../Database";
 
 export default function Assignment() {
-  const {cid} = useParams();
+  const { cid } = useParams();
   return (
     <div>
       <style>
@@ -38,31 +38,32 @@ export default function Assignment() {
                   <b>ASSIGNMENTS</b>
                   <AssignmentControlButtons />
                 </div>
+
                 <ul className="wd-lessons list-group rounded-0">
-                  <li className="wd-lesson list-group-item p-3 ps-1">
-                    <div className="row">
-                      <div className="col col-1">
-                        <BsGripVertical className="me-2 fs-3" />
-                        <MdOutlineLibraryBooks />
-                      </div>
-                      <div className="col col-11">
-                        <Link
-                          to={`/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}
-                          className="link-dark link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
-                        >
+                  <Link
+                    to={`/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}
+                    className="link-dark link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+                  >
+                    <li className="wd-lesson list-group-item p-3 ps-1">
+                      <div className="row">
+                        <div className="col col-1">
+                          <BsGripVertical className="me-2 fs-3" />
+                          <MdOutlineLibraryBooks />
+                        </div>
+                        <div className="col col-11">
                           {assignment.title}
-                        </Link>
-                        <br />
-                        <span className="red-text">
-                          Multiple Modules
-                        </span> | <b>Not available until</b>{" "}
-                        {assignment.availableDate} |<br />
-                        <b>Due</b> {assignment.dueDate} | {assignment.points}{" "}
-                        pts
-                        <AsignmentButtons />
+                          <br />
+                          <span className="red-text">
+                            Multiple Modules
+                          </span> | <b>Not available until</b>{" "}
+                          {assignment.availableDate} |<br />
+                          <b>Due</b> {assignment.dueDate} | {assignment.points}{" "}
+                          pts
+                          <AsignmentButtons />
+                        </div>
                       </div>
-                    </div>
-                  </li>
+                    </li>
+                  </Link>
                 </ul>
               </li>
             ))}
