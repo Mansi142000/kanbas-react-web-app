@@ -13,7 +13,6 @@ export default function Courses() {
   const { cid } = useParams();
   const { pathname } = useLocation();
   const course = courses.find((course) => course._id === cid);
-  console.log(cid);
   return (
     <div id="wd-courses" className="container">
       <div className="row">
