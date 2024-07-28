@@ -3,9 +3,12 @@ import KanbasNavigation from "./Navigation";
 import { Routes, Route, Navigate } from "react-router";
 import Courses from "./Courses";
 import "./styles.css";
+import store from "./store";
+import { Provider } from "react-redux";
 
 export default function Kanbas() {
     return (
+        <Provider store={store}>
       <div id="wd-kanbas">
                 <KanbasNavigation />
                 <div  className="wd-main-content-offset p-3">
@@ -19,5 +22,6 @@ export default function Kanbas() {
                 </Routes>
                 </div>
       </div>
+      </Provider>
   );}
   
