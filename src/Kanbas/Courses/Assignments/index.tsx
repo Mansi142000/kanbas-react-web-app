@@ -4,9 +4,10 @@ import AsignmentButtons from "./AsignmentButtons";
 import { BsGripVertical } from "react-icons/bs";
 import { MdOutlineArrowDropDown, MdOutlineLibraryBooks } from "react-icons/md";
 import { Link, useParams } from "react-router-dom";
-import { assignments } from "../../Database";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function Assignment() {
+  const { assignments } = useSelector((state: any) => state.assignmentsReducer);
   const { cid } = useParams();
   return (
     <div>
@@ -21,7 +22,7 @@ export default function Assignment() {
         `}
       </style>
       <div id="wd-modules">
-        <AssignmentControls />
+        <AssignmentControls/>
         <br />
         <br />
         <br />
