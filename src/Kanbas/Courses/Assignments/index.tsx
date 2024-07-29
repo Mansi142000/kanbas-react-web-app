@@ -5,10 +5,13 @@ import { BsGripVertical } from "react-icons/bs";
 import { MdOutlineArrowDropDown, MdOutlineLibraryBooks } from "react-icons/md";
 import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { deleteAssignment } from "./reducer";
 
 export default function Assignment() {
   const { assignments } = useSelector((state: any) => state.assignmentsReducer);
   const { cid } = useParams();
+  const dispatch = useDispatch();
+
   return (
     <div>
       <style>
@@ -22,7 +25,7 @@ export default function Assignment() {
         `}
       </style>
       <div id="wd-modules">
-        <AssignmentControls/>
+        <AssignmentControls />
         <br />
         <br />
         <br />
@@ -37,7 +40,12 @@ export default function Assignment() {
                   {assignment.name}
                   <MdOutlineArrowDropDown />
                   <b>ASSIGNMENTS</b>
-                  <AssignmentControlButtons />
+                  <AssignmentControlButtons
+                    assignmentId={assignment._id}
+                    deleteAssignment={(assignmentId) => {
+                      dispatch(deleteAssignment(assignmentId));
+                    }}
+                  />
                 </div>
 
                 <ul className="wd-lessons list-group rounded-0">
