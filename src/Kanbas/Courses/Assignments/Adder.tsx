@@ -31,7 +31,6 @@ export default function AssignmentAdder() {
   const addNewAssignment = () => {
     const assignment = newAssignment();
     dispatch(addAssignment(assignment));
-    console.log(assignment);
     setTitle("");
     setDescription("");
     setPoints(0);
