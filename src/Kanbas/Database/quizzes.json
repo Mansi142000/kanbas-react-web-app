@@ -1,0 +1,34 @@
+[
+    {
+      "_id": "Q101",
+      "title": "Quiz 1",
+      "course": "RS101",
+      "description": "This is title",
+      "dueDate": "Aug 05 at 11:59 PM",
+      "points": 10,
+      "status": "Open",
+      "noOfQuestions": 10
+    },
+    {
+        "_id": "Q102",
+        "title": "Quiz 2",
+        "course": "RS101",
+        "description": "This is title",
+        "dueDate": "Aug 05 at 11:59 PM",
+        "points": 10,
+        "status": "Closed",
+        "noOfQuestions": 10
+    },
+    {
+        "_id": "Q103",
+        "title": "Quiz 3",
+        "course": "RS102",
+        "description": "This is title",
+        "dueDate": "Aug 05 at 11:59 PM",
+        "points": 10,
+        "status": "Open",
+        "noOfQuestions": 10
+    }
+    ]
+    
+  

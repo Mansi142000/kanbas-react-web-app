@@ -8,7 +8,7 @@ import { FaAlignJustify } from "react-icons/fa6";
 import Grades from "./Grades";
 import { courses } from "../Database";
 import AssignmentAdder from "./Assignments/Adder";
-
+import Quizzes from "./Quizzes";
 
 export default function Courses() {
   const { cid } = useParams();
@@ -31,6 +31,7 @@ export default function Courses() {
             <Route path="Home" element={<Home />} />
             <Route path="Modules" element={<Modules />} />
             <Route path="Assignments" element={<Assignments />} />
+            <Route path="Quizzes" element={<Quizzes/>}/>
             <Route path="Assignments/:aid" element={<AssignmentEditor />} />
             <Route path="AddAssignment" element={<AssignmentAdder />} />
             <Route path="Grades" element={<Grades />} />
