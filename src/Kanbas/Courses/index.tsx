@@ -9,6 +9,8 @@ import Grades from "./Grades";
 import { courses } from "../Database";
 import AssignmentAdder from "./Assignments/Adder";
 import Quizzes from "./Quizzes";
+import QuizEditor from "./Quizzes/Editor";
+import QuizAdder from "./Quizzes/Adder";
 
 export default function Courses() {
   const { cid } = useParams();
@@ -32,6 +34,8 @@ export default function Courses() {
             <Route path="Modules" element={<Modules />} />
             <Route path="Assignments" element={<Assignments />} />
             <Route path="Quizzes" element={<Quizzes/>}/>
+            <Route path="Quizzes/:qid/QuizEdit" element={<QuizEditor />} />
+            <Route path="AddQuiz" element={<QuizAdder />} />
             <Route path="Assignments/:aid" element={<AssignmentEditor />} />
             <Route path="AddAssignment" element={<AssignmentAdder />} />
             <Route path="Grades" element={<Grades />} />
