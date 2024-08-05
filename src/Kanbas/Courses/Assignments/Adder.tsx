@@ -1,10 +1,9 @@
-import React, { useState } from "react";
 import reducer, { addAssignment } from "./reducer";
 import { useSelector, useDispatch } from "react-redux";
 import { FaRegCalendarAlt } from "react-icons/fa";
-import { courses } from "../../Database";
 import { Link, useParams, useNavigate } from "react-router-dom";
-
+import { useState, useEffect } from "react";
+import * as client from "./client";
 export default function AssignmentAdder() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -28,16 +27,15 @@ export default function AssignmentAdder() {
   const backToAssignments = () =>{
     navigate(`/Kanbas/Courses/${cid}/Assignments`); 
   }
-  const addNewAssignment = () => {
-    const assignment = newAssignment();
-    dispatch(addAssignment(assignment));
+  const  createAssignment = async () => {
+    const newCreatedAssignment = await client.createAssignment(cid as string, newAssignment());
+    dispatch(addAssignment(newCreatedAssignment));
     setTitle("");
     setDescription("");
     setPoints(0);
     setDueDate("");
     setAvailableDate("");
     backToAssignments();
-
   };
 
   return (
@@ -273,7 +271,7 @@ export default function AssignmentAdder() {
         <button
           id="wd-add-assignment-btn"
           className="btn btn-lg btn-danger me-1 float-end"
-          onClick={() => addNewAssignment()}
+          onClick={() => createAssignment()}
         >
           Save
         </button>

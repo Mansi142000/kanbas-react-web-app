@@ -5,13 +5,17 @@ import { BsGripVertical } from "react-icons/bs";
 import { MdOutlineArrowDropDown, MdOutlineLibraryBooks } from "react-icons/md";
 import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { setAssignments, deleteAssignment } from "./reducer";
+import { setAssignments, deleteAssignment, addAssignment } from "./reducer";
 import { useState, useEffect } from "react";
 import * as client from "./client";
 export default function Assignment() {
   const { assignments } = useSelector((state: any) => state.assignmentsReducer);
   const { cid } = useParams();
   const dispatch = useDispatch();
+  const removeAssignment = async (assignmentId: string) => {
+    await client.deleteAssignment(assignmentId);
+    dispatch(deleteAssignment(assignmentId));
+  };
   const fetchAssignments = async () => {
     const assignments = await client.findAssignmentsForCourse(cid as string);
     dispatch(setAssignments(assignments));
@@ -51,7 +55,7 @@ export default function Assignment() {
                   <AssignmentControlButtons
                     assignmentId={assignment._id}
                     deleteAssignment={(assignmentId) => {
-                      dispatch(deleteAssignment(assignmentId));
+                      removeAssignment(assignmentId);
                     }}
                   />
                 </div>
