@@ -3,7 +3,9 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { updateAssignment } from "./reducer";
+import reducer, { updateAssignment } from "./reducer";
+import * as client from "./client";
+
 
 export default function AssignmentEditor() {
   const { assignments } = useSelector((state: any) => state.assignmentsReducer);
@@ -35,9 +37,9 @@ export default function AssignmentEditor() {
     navigate(`/Kanbas/Courses/${cid}/Assignments`); 
   }
 
-  const updateAsg = () => {
-    const assignment = udtAssignment();
-    dispatch(updateAssignment(assignment));
+  const  updAssignment = async () => {
+    const newCreatedAssignment = await client.updateAssignment(udtAssignment());
+    dispatch(updateAssignment(newCreatedAssignment));
     setTitle("");
     setDescription("");
     setPoints(0);
@@ -278,7 +280,7 @@ export default function AssignmentEditor() {
         <button
           id="wd-add-assignment-btn"
           className="btn btn-lg btn-danger me-1 float-end"
-          onClick={() => updateAsg()}
+          onClick={() => updAssignment()}
         >
           Save
         </button>
