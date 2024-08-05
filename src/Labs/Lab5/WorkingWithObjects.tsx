@@ -9,14 +9,14 @@ export default function WorkingWithObjects() {
     completed: true,
     score: 0,
   });
-  const ASSIGNMENT_API_URL = `${"http://localhost:4000"}/lab5/assignment`;
+  const ASSIGNMENT_API_URL = `${REMOTE_SERVER}/lab5/assignment`;
   const [module, setModule] = useState({
     id: 1,
     name: "Module1",
     description: "This is first Module",
     course: "Web Dev",
   });
-  const MODULE_API_URL = `${"http://localhost:4000"}/lab5/module`;
+  const MODULE_API_URL = `${REMOTE_SERVER}/lab5/module`;
   return (
     <div>
       <h3 id="wd-working-with-objects">Working With Objects</h3>
@@ -24,7 +24,7 @@ export default function WorkingWithObjects() {
       <a
         id="wd-retrieve-assignments"
         className="btn btn-primary"
-        href={`${"http://localhost:4000"}/lab5/assignment`}
+        href={`${REMOTE_SERVER}/lab5/assignment`}
       >
         Get Assignment
       </a>
@@ -33,7 +33,7 @@ export default function WorkingWithObjects() {
       <a
         id="wd-retrieve-assignment-title"
         className="btn btn-primary"
-        href={`${"http://localhost:4000"}/lab5/assignment/title`}
+        href={`${REMOTE_SERVER}/lab5/assignment/title`}
       >
         Get Title
       </a>
@@ -59,7 +59,7 @@ export default function WorkingWithObjects() {
       <a
         id="wd-retrieve-module"
         className="btn btn-primary"
-        href={`${"http://localhost:4000"}/lab5/module`}
+        href={`${REMOTE_SERVER}/lab5/module`}
       >
         Get Module
       </a>
@@ -68,7 +68,7 @@ export default function WorkingWithObjects() {
       <a
         id="wd-retrieve-module-name"
         className="btn btn-primary"
-        href={`${"http://localhost:4000"}/lab5/module/name`}
+        href={`${REMOTE_SERVER}/lab5/module/name`}
       >
         Get Name
       </a>

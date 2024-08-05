@@ -1,6 +1,6 @@
 import axios from "axios";
 const REMOTE_SERVER = process.env.REACT_APP_REMOTE_SERVER;
-const COURSES_API = `${"http://localhost:4000"}/api/courses`;
+const COURSES_API = `${REMOTE_SERVER}/api/courses`;
 export const findModulesForCourse = async (courseId: string) => {
   const response = await axios.get(`${COURSES_API}/${courseId}/modules`);
   return response.data;
@@ -12,7 +12,7 @@ export const createModule = async (courseId: string, module: any) => {
   );
   return response.data;
 };
-const MODULES_API = `${"http://localhost:4000"}/api/modules`;
+const MODULES_API = `${REMOTE_SERVER}/api/modules`;
 export const deleteModule = async (moduleId: string) => {
   const response = await axios.delete(`${MODULES_API}/${moduleId}`);
   return response.data;
