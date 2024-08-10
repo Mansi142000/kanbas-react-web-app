@@ -11,6 +11,7 @@ import AssignmentAdder from "./Assignments/Adder";
 import Quizzes from "./Quizzes";
 import QuizEditor from "./Quizzes/Editor";
 import QuizAdder from "./Quizzes/Adder";
+import PeopleTable from "./People/Table";
 import { useState, useEffect } from "react";
 
 export default function Courses() {
@@ -59,6 +60,7 @@ export default function Courses() {
             <Route path="Assignments/:aid" element={<AssignmentEditor />} />
             <Route path="AddAssignment" element={<AssignmentAdder />} />
             <Route path="Grades" element={<Grades />} />
+            <Route path="People" element={<PeopleTable />} />
           </Routes>
         </div>
       </div>

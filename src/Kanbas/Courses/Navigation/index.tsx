@@ -6,7 +6,7 @@ import './index.css';
 export default function CoursesNavigation() {
   const { pathname } = useLocation();
   const { cid } = useParams<{ cid: string }>();
-  const links = ["Home", "Modules", "Piazza", "Zoom", "Assignments", "Quizzes", "Grades"];
+  const links = ["Home", "Modules", "Piazza", "Zoom", "Assignments", "Quizzes", "Grades", "People"];
 
   const getCurrentPage = () => {
     return links.find(link => pathname.includes(link)) || "Home";

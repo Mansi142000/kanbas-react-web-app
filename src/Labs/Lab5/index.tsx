@@ -6,7 +6,9 @@ import WorkingWithArrays from "./WorkingWithArrays";
 import HttpClient from "./HttpClient";
 import WorkingWithObjectsAsynchronously from "./WorkingWithObjectsAsynchronously";
 import WorkingWithArraysAsynchronously from "./WorkingWithArraysAsynchronously";
-const REMOTE_SERVER = process.env.REACT_APP_REMOTE_SERVER;
+// const REMOTE_SERVER = process.env.REACT_APP_REMOTE_SERVER;
+const REMOTE_SERVER = "http://localhost:4000"
+
 export default function Lab5() {
   return (
     <div id="wd-lab5">
