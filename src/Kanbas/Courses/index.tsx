@@ -61,6 +61,7 @@ export default function Courses() {
             <Route path="AddAssignment" element={<AssignmentAdder />} />
             <Route path="Grades" element={<Grades />} />
             <Route path="People" element={<PeopleTable />} />
+            <Route path="People/:uid" element={<PeopleTable />} />
           </Routes>
         </div>
       </div>
