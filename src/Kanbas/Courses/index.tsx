@@ -3,10 +3,10 @@ import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
-import { Navigate, Route, Routes, useLocation, useParams } from "react-router-dom"; // Fixed import for react-router
+import { Navigate, Route, Routes, useLocation, useParams } from "react-router-dom";
 import { FaAlignJustify } from "react-icons/fa";
 import Grades from "./Grades";
-import { fetchCourse } from "./client"; // Ensure this is correctly imported
+import { fetchCourse } from "./client"; 
 import AssignmentAdder from "./Assignments/Adder";
 import Quizzes from "./Quizzes";
 import QuizEditor from "./Quizzes/Editor";
@@ -18,10 +18,9 @@ export default function Courses() {
   const { cid } = useParams();
   const { pathname } = useLocation();
   const [course, setCourse] = useState(null);
-  const [loading, setLoading] = useState(true); // Added loading state
-  const [error, setError] = useState(null); // Added error state
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null); 
   useEffect(() => {
-    // Define the async function inside useEffect
     const loadCourse = async () => {
       try {
         const fetchedCourse = await fetchCourse(cid);
