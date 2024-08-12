@@ -13,29 +13,29 @@ import QuizEditor from "./Quizzes/Editor";
 import QuizAdder from "./Quizzes/Adder";
 import PeopleTable from "./People/Table";
 import { useState, useEffect } from "react";
+import { courses } from "../Database";
 
 export default function Courses() {
   const { cid } = useParams();
   const { pathname } = useLocation();
-  const [course, setCourse] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null); 
-  useEffect(() => {
-    const loadCourse = async () => {
-      try {
-        const fetchedCourse = await fetchCourse(cid);
-        setCourse(fetchedCourse);
-      } catch (err) {
-        setError(err);
-      } finally {
-        setLoading(false);
-      }
-    };
+  // const [course, setCourse] = useState(null);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null); 
+  // useEffect(() => {
+  //   const loadCourse = async () => {
+  //     try {
+  //       const fetchedCourse = await fetchCourse(cid);
+  //       setCourse(fetchedCourse);
+  //     } catch (err) {
+  //       setError(err);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    loadCourse();
-  }, [cid]);
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error loading course: {error.message}</div>;
+  //   loadCourse();
+  // }, [cid]);
+  const course = courses.find((course) => course._id === cid);
   return (
     <div id="wd-courses" className="container">
       <div className="row">
