@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import * as client from "../Courses/client";
+import { useSelector } from "react-redux";
 export default function Dashboard() {
   const [courses, setCourses] = useState<any[]>([]);
   const addNewCourse = async () => {
@@ -41,9 +42,10 @@ export default function Dashboard() {
     image: "/images/reactjs.jpg",
     description: "New Description",
   });
+  const {currentUser} = useSelector ((state: any)=>state.accountReducer)
   return (
     <div id="wd-dashboard">
-      <h1 id="wd-dashboard-title">Dashboard</h1> <hr />
+      <h1 id="wd-dashboard-title">Dashboard ({currentUser.username})</h1> <hr />
       <h5>
         New Course
         <button
